@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="GBK">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+	<title>Phaser</title>
+    <style>
+        *{margin:0;padding:0}
+        html, body
+        {
+            -webkit-text-size-adjust:none;
+            overflow: hidden;
+            height:100%;
+        }
+        #code{
+            width:183px;
+            position: absolute;
+            top:30%;
+            right:100px;
+        }
+        #code p{
+            color:#fff;
+            font-size:14px;
+            margin:0;
+            text-align: center;
+            line-height: 24px;
+        }
+    </style>
+    <script src="phaser.2.4.4.min.js"></script>
+    <script src="Boot.js"></script>
+    <script src="Preloader.js"></script>
+    <script src="MainMenu.js?1"></script>
+    <script src="a1.js"></script>
+    <script src="a2.js"></script>
+    <script src="a3.js"></script>
+    <script src="a4.js"></script>
+    <script src="a5.js"></script>
+    <script src="a6.js"></script>
+    <script src="a7.js"></script>
+    <script src="a8.js"></script>
+    <script src="a9.js"></script>
+    <script src="a10.js"></script>
+    <script src="a11.js"></script>
+    <script src="a12.js"></script>
+    <script src="a13.js"></script>
+    <script src="end.js"></script>
+    <script src="nav.js"></script>
+</head>
+<body style="background-color: #000">
+<div id="code" style="display: none">
+    <p>点击下方麦克风可以观看</p>
+    <p style="margin-bottom:20px">你还可以扫描二维码手机观看</p>
+    <img src="assets/code.png" alt=""/>
+</div>
+<script>
+    (function() {
+        var game = new Phaser.Game(750, 1206, Phaser.CANVAS, 'game');
+        game.state.add('Boot', MyGame.Boot);
+        game.state.add('Preloader', MyGame.Preloader);
+        game.state.add('MainMenu', MyGame.MainMenu);
+        game.state.add('a1', MyGame.a1);
+        game.state.add('a2', MyGame.a2);
+        game.state.add('a3', MyGame.a3);
+        game.state.add('a4', MyGame.a4);
+        game.state.add('a5', MyGame.a5);
+        game.state.add('a6', MyGame.a6);
+        game.state.add('a7', MyGame.a7);
+        game.state.add('a8', MyGame.a8);
+        game.state.add('a9', MyGame.a9);
+        game.state.add('a10', MyGame.a10);
+        game.state.add('a11', MyGame.a11);
+        game.state.add('a12', MyGame.a12);
+        game.state.add('a13', MyGame.a13);
+        game.state.add('end', MyGame.end);
+        game.state.add('nav', MyGame.nav);
+        game.state.start('Boot');
+    })();
+</script>
+<script>
+    function IsPC()
+    {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+        }
+        return flag;
+    }
+
+    if(IsPC())
+    {
+        document.getElementById('code').style.display = 'block';
+    }
+
+</script>
+<!--<script src="inpMusic.js"></script>-->
+</body>
+</html>
